@@ -1,0 +1,21 @@
+<h2>Por Capital</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <app-pais-input placeholder="Busqueda por capital.." (onEnter)="buscar($event)"></app-pais-input>
+  </div>
+</div>
+
+<hr>
+
+
+<div *ngIf="hayError" class="alert alert-danger">
+  No se encontro nada con el termino: {{termino | uppercase}}
+</div>
+
+<div *ngIf="!hayError" class="row">
+  <div class="col">
+    <app-pais-tabla [country]="country"></app-pais-tabla>
+  </div>
+</div>
